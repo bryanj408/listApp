@@ -11,15 +11,6 @@ if (inputValue === '') {
     $('#list').append(li);
 }
 
-
-$(window).keydown(function(e) {
-    //Enter key holds the value of 13
-    if (e.keyCode === 13) {
-        $('#list').append(li);
-        console.log('Form submitted');
-    }
-})
-
 //Crossing out an item from the list of items
 function crossOut() {
     li.toggleClass('strike');
@@ -43,19 +34,15 @@ function deleteListItem() {
 $('#list').sortable();
 }
 
-// $(document).ready(() => {
-//     $('#input').on('submit', () => {
-//         return false;
-//     });
-// });
+$(document).ready(function() {
+    $('#input').keydown(function(e) {
+        //Enter key holds the value of 13
+        if (e.keyCode === 13) {
+            let li = `<li>${$(this).val()}</li>`;
+            $('#list').append(li);
+            console.log('Form submitted');
 
-// $('#input').keypress((e) => {
-
-//     //Enter key corresponds to the number 13
-//     if (e.which === 13) {
-//         // $('#list').append(li);
-//         $('#input').submit();
-//         console.log('form submitted');
-//     }
-// })
-
+            e.preventDefault();
+        }
+    })
+});
