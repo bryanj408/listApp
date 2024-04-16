@@ -12,15 +12,13 @@
         <p><em> Double click to mark an item off, click on "x" to
             delete an item, and drag items to reorder </em></p>
 
-            <form name="toDoList">
+            <form name="toDoList" onsubmit="newItem(); return false">
                 <input type="text" name="listItem" id="input">
+                <button id="button">Add</button>
             </form>
 
-            <div onclick="newItem()" id="button">Add</div>
             <br/>
-            <ol id="list">
-                <button class="delete"></button>
-            </ol>
+            <ol id="list"></ol>
     </div>
 
 
