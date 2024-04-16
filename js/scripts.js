@@ -9,6 +9,8 @@ if (inputValue === '') {
     alert('You must write something');
 } else {
     $('#list').append(li);
+    //clears input field after selecting 'Add' button
+    $('#input').val(''); 
 }
 
 //Crossing out an item from the list of items
@@ -21,7 +23,8 @@ li.on('dblclick', function crossOut() {
 });
 
 //Adding the delete button 'X'
-let crossOutButton = $('.delete').append(document.createTextNode('X'));
+let crossOutButton = $('<crossOutButton></crossOutButton>');
+crossOutButton.append(document.createTextNode('X'));
 li.append(crossOutButton);
 
 crossOutButton.on('click', deleteListItem);
@@ -32,17 +35,31 @@ function deleteListItem() {
 
 //reordering the items
 $('#list').sortable();
+
 }
 
-$(document).ready(function() {
-    $('#input').keydown(function(e) {
-        //Enter key holds the value of 13
-        if (e.keyCode === 13) {
-            let li = `<li>${$(this).val()}</li>`;
-            $('#list').append(li);
-            console.log('Form submitted');
+// //keydown function to listen for enter key
+// 	$(document).ready(function() {
+// 		$('#input').keydown(function(e) {
+	
+// 		//initialized variable and set as undefined
+// 		let inputValue;
+	 
+// 		if (inputValue === '') {
+// 				alert("You must enter something");
+// 		} else {
+// 				//Enter key holds the value of 13
+// 				if (e.keyCode === 13) {
+// 				let li = `<li>${$(this).val()}</li>`;
+// 				$('#list').append(li);
+// 				console.log('Form submitted');
+	
+// 				e.preventDefault(); 
+// 				//clears input field after hitting enter
+// 				$('#input').val('');
+// 				}
+// 		}
+// 		})
+// 	});
 
-            e.preventDefault();
-        }
-    })
-});
+        
