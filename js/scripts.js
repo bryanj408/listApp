@@ -1,3 +1,6 @@
+//default sortableJS
+import Sortable from 'sortablejs';
+
 function newItem() {
 
 //Adds new item to the list
@@ -35,31 +38,12 @@ function deleteListItem() {
 
 //reordering the items
 $('#list').sortable();
-$('#list').disableSelection();
+
+new Sortable($('#list'), {
+	animation: 150
+});
+// $('#list').disableSelection();
 }
 
-// //keydown function to listen for enter key
-// 	$(document).ready(function() {
-// 		$('#input').keydown(function(e) {
-	
-// 		//initialized variable and set as undefined
-// 		let inputValue;
-	 
-// 		if (inputValue === '') {
-// 				alert("You must enter something");
-// 		} else {
-// 				//Enter key holds the value of 13
-// 				if (e.keyCode === 13) {
-// 				let li = `<li>${$(this).val()}</li>`;
-// 				$('#list').append(li);
-// 				console.log('Form submitted');
-	
-// 				e.preventDefault(); 
-// 				//clears input field after hitting enter
-// 				$('#input').val('');
-// 				}
-// 		}
-// 		})
-// 	});
 
         
