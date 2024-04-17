@@ -1,6 +1,3 @@
-//default sortableJS
-import Sortable from 'sortablejs';
-
 function newItem() {
 
 //Adds new item to the list
@@ -38,11 +35,6 @@ function deleteListItem() {
 
 //reordering the items
 $('#list').sortable();
-
-new Sortable($('#list'), {
-	animation: 150
-});
-// $('#list').disableSelection();
 }
 
 
