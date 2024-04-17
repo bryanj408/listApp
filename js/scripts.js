@@ -35,7 +35,7 @@ function deleteListItem() {
 
 //reordering the items
 $('#list').sortable();
-
+$('#list').disableSelection();
 }
 
 // //keydown function to listen for enter key
