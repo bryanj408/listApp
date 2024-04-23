@@ -19,7 +19,13 @@ function crossOut() {
 }
 
 li.on('dblclick', function crossOut() {
-    li.toggleClass('strike');
+		//disable sortable while double-clicking
+		$('#list').sortable('disable');
+		
+    li.toggleClass('strike', function() {
+			//enable sortable after double-clicking is complete
+			$('#list').sortable('enable');
+		});
 });
 
 //Adding the delete button 'X'
@@ -34,9 +40,7 @@ function deleteListItem() {
 }
 
 //reordering the items
-$('#list').sortable({
-	delay: 250
-});
+$('#list').sortable();
 
 
 
