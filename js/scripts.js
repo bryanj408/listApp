@@ -20,6 +20,12 @@ function newItem() {
 
 	li.on('dblclick dbltap', function crossOut() {
 			li.toggleClass('strike');
+
+			if ('dbltap') {
+				$('#list').sortable({
+					delay: 200
+				})
+			}
 	});
 
 	//Adding the delete button 'X'
@@ -33,9 +39,7 @@ function newItem() {
 			li.addClass('delete');
 	}
 
-	// $('#list').sortable({
-	// 	delay: 200
-	// })
+	
 
 }
 
