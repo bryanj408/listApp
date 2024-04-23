@@ -19,8 +19,7 @@ function newItem() {
 	}
 
 	li.on('dblclick dbltap', function crossOut() {
-			// li.toggleClass('strike');
-			setTimeout(toggleStrike, 200);
+			li.toggleClass('strike');
 	});
 
 	//Adding the delete button 'X'
@@ -34,22 +33,10 @@ function newItem() {
 			li.addClass('delete');
 	}
 
-	// $('#list').sortable({
-	// 	delay: 200
-	// })
-
-	
 	$('#list').sortable({
-		delay: 200, //delay before starting sorting
-		start: function(event, ui) {
-			//cancel the double-click event for crossing out when sorting starts
-			ui.item.off('dblclick');
-		},
-		stop: function(event, ui) {
-			//re-attach the double-click event after sorting stops
-			ui.item.on('dblclick', toggleStrike);
-		}
-	});
+		delay: 200
+	})
+
 }
 
 
