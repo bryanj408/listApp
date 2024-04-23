@@ -14,14 +14,14 @@ if (inputValue === '') {
 }
 
 //Crossing out an item from the list of items
-function crossOut() {
-    li.toggleClass('strike');
-}
+// function crossOut() {
+//     li.toggleClass('strike');
+// }
 
-li.on('dblclick', function crossOut() {
+li.on('dblclick', function() {
 		//disable sortable while double-clicking
 		$('#list').sortable('disable');
-		
+
     li.toggleClass('strike', function() {
 			//enable sortable after double-clicking is complete
 			$('#list').sortable('enable');
