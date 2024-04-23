@@ -33,9 +33,9 @@ function newItem() {
 			li.addClass('delete');
 	}
 
-	$('#list').sortable({
-		delay: 200
-	})
+	// $('#list').sortable({
+	// 	delay: 200
+	// })
 
 }
 
