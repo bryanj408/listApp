@@ -1,50 +1,55 @@
 function newItem() {
 
-//Adds new item to the list
-let li = $('<li></li>');
-let inputValue = $('#input').val();
-li.append(inputValue);
+	//Adds new item to the list
+	let li = $('<li></li>');
+	let inputValue = $('#input').val();
+	li.append(inputValue);
 
-if (inputValue === '') {
-    alert('You must write something');
-} else {
-    $('#list').append(li);
-    //clears input field after selecting 'Add' button
-    $('#input').val(''); 
-}
+	if (inputValue === '') {
+			alert('You must write something');
+	} else {
+			$('#list').append(li);
+			//clears input field after selecting 'Add' button
+			$('#input').val(''); 
+	}
 
-//Crossing out an item from the list of items
-// function crossOut() {
-//     li.toggleClass('strike');
-// }
+	//Crossing out an item from the list of items
+	// function crossOut() {
+	//     li.toggleClass('strike');
+	// }
 
-li.on('dblclick', function() {
-		//disable sortable while double-clicking
-		$('#list').sortable('disable');
+	li.on('dblclick', function() {
+			// li.toggleClass('strike');
+			setTimeout(toggleStrike, 200);
+	});
 
-    li.toggleClass('strike', function() {
-			//enable sortable after double-clicking is complete
-			$('#list').sortable('enable');
-		});
-});
+	//Adding the delete button 'X'
+	let crossOutButton = $('<crossOutButton></crossOutButton>');
+	crossOutButton.append(document.createTextNode('X'));
+	li.append(crossOutButton);
 
-//Adding the delete button 'X'
-let crossOutButton = $('<crossOutButton></crossOutButton>');
-crossOutButton.append(document.createTextNode('X'));
-li.append(crossOutButton);
+	crossOutButton.on('click', deleteListItem);
+	//Adding class delete (display: none) from css
+	function deleteListItem() {
+			li.addClass('delete');
+	}
 
-crossOutButton.on('click', deleteListItem);
-//Adding class delete (display: none) from css
-function deleteListItem() {
-    li.addClass('delete');
-}
+	// $('#list').sortable({
+	// 	delay: 200
+	// })
 
-//reordering the items
-$('#list').sortable();
-
-
-
-
+	
+	$('#list').sortable({
+		delay: 200, //delay before starting sorting
+		start: function(event, ui) {
+			//cancel the double-click event for crossing out when sorting starts
+			ui.item.off('dblclick');
+		},
+		stop: function(event, ui) {
+			//re-attach the double-click event after sorting stops
+			ui.item.on('dblclick', toggleStrike);
+		}
+	});
 }
 
 
