@@ -34,9 +34,12 @@ function deleteListItem() {
 }
 
 //reordering the items
-setTimeout(() => {
-	$('#list').sortable();
-}, 500);
+$('#list').sortable({
+	delay: 250
+});
+
+
+
 
 }
 
