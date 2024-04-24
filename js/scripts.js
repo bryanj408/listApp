@@ -19,14 +19,12 @@ function newItem() {
 	// }
 
 	li.on('dblclick dbltap', function crossOut() {
-		
+
 			li.toggleClass('strike');
 
-			if ('ontouchstart' in window) {
-				$('#list').sortable({
-					delay: 200
-				});
-			}
+			$('#list').sortable({
+				delay: 200
+			});
 	});
 
 	//Adding the delete button 'X'
