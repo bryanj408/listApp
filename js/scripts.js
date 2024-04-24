@@ -15,10 +15,10 @@ function newItem() {
 
 	//Crossing out an item from the list of items
 	function crossOut() {
-	    $(this).toggleClass('strike');
+	    li.toggleClass('strike');
 	}
 
-	$(this).on('dblclick', 'li', crossOut) 
+	li.on('dblclick', crossOut) 
 
 
 	//Adding the delete button 'X'
@@ -29,7 +29,7 @@ function newItem() {
 	crossOutButton.on('click', deleteListItem);
 	//Adding class delete (display: none) from css
 	function deleteListItem() {
-			$(this).parent().addClass('delete');
+			li.addClass('delete');
 	}
 
 	$('#list').sortable({
