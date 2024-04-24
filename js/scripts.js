@@ -21,11 +21,11 @@ function newItem() {
 	li.on('dblclick dbltap', function crossOut() {
 			li.toggleClass('strike');
 
-			// if ('dbltap') {
-			// 	$('#list').sortable({
-			// 		delay: 200
-			// 	})
-			// }
+			if ('dbltap') {
+				$('#list').sortable('disable');
+			} else {
+				$('#list').sortable('enable');
+			}
 	});
 
 	//Adding the delete button 'X'
