@@ -14,14 +14,14 @@ function newItem() {
 	}
 
 	//Crossing out an item from the list of items
-	function crossOut() {
-	    li.toggleClass('strike');
-	}
+	// function crossOut() {
+	//     li.toggleClass('strike');
+	// }
 
 	li.on('dblclick dbltap', function crossOut() {
 			li.toggleClass('strike');
 
-			if ('dbltap') {
+			if ('ontouchstart' in window && 'dbltap') {
 				$('#list').sortable('disable');
 			} else {
 				$('#list').sortable('enable');
