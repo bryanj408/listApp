@@ -19,12 +19,13 @@ function newItem() {
 	// }
 
 	li.on('dblclick dbltap', function crossOut() {
+		
+			li.toggleClass('strike');
 
 			if ('ontouchstart' in window) {
 				$('#list').sortable({
 					delay: 200
 				});
-				li.toggleClass('strike');
 			}
 	});
 
