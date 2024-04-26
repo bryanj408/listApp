@@ -13,12 +13,14 @@ function newItem() {
 			$('#input').val(''); 
 	}
 
-	//Crossing out an item from the list of items
-	function crossOut() {
-	    li.toggleClass('strike');
-	}
+	// function crossOut() {
+	//     li.toggleClass('strike');
+	// }
 
-	li.on('dblclick', crossOut) 
+	//Crossing out an item from the list of items
+	li.on('dblclick', function crossOut() {
+		li.toggleClass('strike');
+	}); 
 
 
 	//Adding the delete button 'X'
@@ -32,11 +34,8 @@ function newItem() {
 			li.addClass('delete');
 	}
 
-	$('#list').sortable({
-		delay: 200
-	});
-
 }
 
 
+$('#list').sortable();
         
