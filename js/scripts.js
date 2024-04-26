@@ -18,7 +18,7 @@ function newItem() {
 	// }
 
 	//Crossing out an item from the list of items
-	li.on('dblclick', function crossOut() {
+	li.on('dblclick', 'dbltap', function crossOut() {
 		li.toggleClass('strike');
 	}); 
 
