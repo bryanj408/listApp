@@ -19,7 +19,8 @@ function newItem() {
 	// 	li.toggleClass('strike');
 	// }); 
 
-	li.on('touchstart', 'dblclick', function() {
+	li.on('dblclick touchstart', function(e) {
+		if (!$(e.target).is('crossOutbutton'))
 		li.toggleClass('strike');
 	})
 
@@ -38,8 +39,7 @@ function newItem() {
 }
 
 new Sortable(list, {
-	handle: '.my-handle', //restrict drag start to the class .my-handle
-	fallbackTolerance: 3  //to differentiate between a single touch and a move on touch devices
+	animation: 150
 })
 
 // $('#list').sortable();
