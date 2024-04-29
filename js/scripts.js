@@ -40,7 +40,7 @@ function newItem() {
 
 new Sortable(document.getElementById('list'), {
 	animation: 150,
-	delay: 300
+	delay: 250
 })
 
 // $('#list').sortable();
