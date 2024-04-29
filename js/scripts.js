@@ -13,14 +13,15 @@ function newItem() {
 			$('#input').val(''); 
 	}
 
-	// function crossOut() {
-	//     li.toggleClass('strike');
-	// }
 
 	//Crossing out an item from the list of items
-	li.on('dblclick', 'dbltap', function crossOut() {
+	// li.on('dblclick', 'dbltap', function crossOut() {
+	// 	li.toggleClass('strike');
+	// }); 
+
+	li.on('touchstart', 'dblclick', function() {
 		li.toggleClass('strike');
-	}); 
+	})
 
 
 	//Adding the delete button 'X'
@@ -36,6 +37,10 @@ function newItem() {
 
 }
 
+new Sortable(list, {
+	handle: '.my-handle', //restrict drag start to the class .my-handle
+	fallbackTolerance: 3  //to differentiate between a single touch and a move on touch devices
+})
 
-$('#list').sortable();
+// $('#list').sortable();
         
