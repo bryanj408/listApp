@@ -38,7 +38,7 @@ function newItem() {
 
 }
 
-new Sortable($('#list'), {
+new Sortable(list, {
 	animation: 150
 })
 
