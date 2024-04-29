@@ -19,7 +19,7 @@ function newItem() {
 	// 	li.toggleClass('strike');
 	// }); 
 
-	li.on('dblclick', function(e) {
+	li.on('dblclick dbltap', function(e) {
 		if (!$(e.target).is('crossOutbutton'))
 		li.toggleClass('strike');
 	})
@@ -38,7 +38,7 @@ function newItem() {
 
 }
 
-new Sortable(list, {
+new Sortable($('#list'), {
 	animation: 150
 })
 
