@@ -39,7 +39,8 @@ function newItem() {
 }
 
 new Sortable(document.getElementById('list'), {
-	animation: 150
+	animation: 150,
+	delay: 200
 })
 
 // $('#list').sortable();
