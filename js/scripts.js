@@ -38,7 +38,7 @@ function newItem() {
 
 }
 
-new Sortable(li, {
+new Sortable(document.getElementById('list'), {
 	animation: 150
 })
 
