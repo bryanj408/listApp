@@ -19,7 +19,7 @@ function newItem() {
 	// 	li.toggleClass('strike');
 	// }); 
 
-	li.on('dblclick touchstart', function(e) {
+	li.on('dblclick', function(e) {
 		if (!$(e.target).is('crossOutbutton'))
 		li.toggleClass('strike');
 	})
