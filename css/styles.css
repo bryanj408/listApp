@@ -5,6 +5,15 @@ body {
     background: #dfdfdf;
 }
 
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+p { 
+   text-align: center;
+}
+
 .container {
     padding: 20px;
     width: 300px;
@@ -19,7 +28,7 @@ form {
 }
 
 input {
-    padding: 4px 15px 4px 5px;
+    padding: 4px 85px 4px 5px;
 }
 
 #button {
