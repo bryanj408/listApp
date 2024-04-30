@@ -69,3 +69,9 @@ li > crossOutButton {
     color: #025f70;
     font-weight: 800;
 }
+
+@media only screen and (max-width: 600px) {
+    input {
+        padding: 4px 55px 4px 5px;
+    }
+}
